@@ -20,12 +20,19 @@ This pipeline shifts measurement from short-term ROAS to a CAC vs LTV framework.
 ---
 
 ## Pipeline Architecture
+
 Seeds (6 tables)
+
 ↓
+
 Staging — clean and rename raw data
+
 ↓
+
 Intermediate — join and calculate core metrics
+
 ↓
+
 Marts — final tables for Tableau dashboards
 
 ---
