@@ -34,9 +34,9 @@ models:
         description: "Customer value tier based on net revenue"
         tests:
           - accepted_values:
-              values: ['high_value', 'mid_value', 'low_value']
+              values: ['high_value', 'mid_value', 'low_value', 'no_orders']
       - name: churn_risk
         description: "Churn risk flag based on subscription status"
         tests:
           - accepted_values:
-              values: ['high_risk', 'low_risk', 'unknown']
+              values: ['high_risk', 'low_risk', 'no_subscription','unknown']
