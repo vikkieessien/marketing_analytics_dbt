@@ -108,5 +108,5 @@ dbt test
 
 ## Author
 
-Victoria Essien — Senior Analytics Engineer  
+Victoria Essien — Analytics Engineer  
 [GitHub](https://github.com/vikkieessien) | [LinkedIn](https://linkedin.com/in/victoriaessien)
