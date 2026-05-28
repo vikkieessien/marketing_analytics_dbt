@@ -20,11 +20,11 @@ final as (
         acquisition_channel,
         country,
         tenure_months,
-        count(customer_id)                                                          as total_customers,
+        count(distinct customer_id)                                                 as total_customers,
         sum(is_retained)                                                            as retained_customers,
-        count(customer_id) - sum(is_retained)                                      as churned_customers,
-        round(100.0 * sum(is_retained) / count(customer_id), 2)                    as retention_rate_pct,
-        round(100.0 * (count(customer_id) - sum(is_retained)) / count(customer_id), 2) as churn_rate_pct,
+        count(distinct customer_id) - sum(is_retained)                              as churned_customers,
+        round(100.0 * sum(is_retained) / count(distinct customer_id), 2)             as retention_rate_pct,
+        round(100.0 * (count(distinct customer_id) - sum(is_retained)) / count(customer_id), 2) as churn_rate_pct,
         round(sum(net_amount), 2)                                                   as cohort_revenue,
         round(avg(net_amount), 2)                                                   as avg_ltv
     from base

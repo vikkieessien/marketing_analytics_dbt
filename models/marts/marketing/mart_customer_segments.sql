@@ -28,12 +28,12 @@ with final as (
         end as value_segment,
         case
             when subscription_status in ('cancelled', 'churned') then 'high_risk'
-            when subscription_status = 'active' then 'low_risk'
-            when subscription_status = 'upgraded' then 'low_risk'
+            when subscription_status in ('active', 'upgraded', 'downgraded') then 'low_risk'
             when subscription_status is null then 'no_subscription'
             else 'unknown'
         end as churn_risk
     from {{ ref('int_customer_acquisition') }}
+    where plan_type != 'free'
 )
 
 select * from final
